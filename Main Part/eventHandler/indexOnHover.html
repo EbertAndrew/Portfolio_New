@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Image Guess </title>
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        img {
+            margin: 20px;
+        }
+
+        /* added in second step */
+    </style>
+    <script>
+        window.onload = init;
+
+        function init() {
+            var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i++) {
+                images[i].onmouseover = showAnswer;
+            }
+        };
+
+        function showAnswer(eventObj) {
+            var image = eventObj.target;
+            var name = image.id;
+            name = name + ".jpg";
+            image.src = name;
+            setTimeout(reblur, 2000, image.id);
+        }
+
+        function reblur(id) {
+            var image = document.getElementById(id);
+            var name = id + "blury.jpg";
+            image.src = name;
+
+        }
+    </script>
+</head>
+
+<body>
+    <img id="one" src="oneblury.jpg">
+    <img id="two" src="twoblury.jpg">
+    <img id="three" src="threeblury.jpg">
+    <img id="four" src="fourblury.jpg">
+    
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1"> Andrew E </span>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutMe.html"> About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productSlider.html"> Slider </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carlot.html"> Car Game </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/battleshipGame/battleship.html"> Battleship </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Black-Jack/blackjack.html"> Blackjack </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/portfolio-master/Main Part/eventHandler/indexOnHover.html"> onHover </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/portfolio-master/Main Part/eventHandler/indexOnClick.html"> onClick </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/portfolio-master/Shopping Cart/store.html"> Shopping Cart </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/masterPortfolioEbert/contactForm/contactForm.html"> Contact Form </a>
+    </li>
+          </ul>
+        </div>
+      </nav>
+
+</body>
+
+</html>
